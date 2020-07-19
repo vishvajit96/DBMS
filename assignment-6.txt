@@ -1,0 +1,14 @@
+
+
+1)- select * from ORDERS where Odate between '1990-10-03' and '1990-10-04';
+  -select * from ORDERS where Odate in ('1990-10-03','1990-10-04');
+
+2) -select * from CUSTOMER where Snum in ( 1004,1001);
+
+3) -select * from CUSTOMER  where cname between 'A' and 'H' and cname not like 'H%';
+
+4) -SELECT * FROM CUSTOMER where cname like 'C%';
+
+5) -SELECT * FROM ORDERS WHERE amt not in (0,'NULL');
+
+
