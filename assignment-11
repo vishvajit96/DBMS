@@ -1,0 +1,6 @@
+
+1)- select onum,amt,odate,cnum from ORDERS where cnum= (select cnum from CUSTOMER where cname='Cisneros');
+
+2)- select cnum,cname,rating from CUSTOMER where cnum in(select cnum from ORDERS where amt>(select avg(amt) from ORDERS));
+
+3)- select snum,sum(amt) from ORDERS group by snum having sum(amt)>(select max(amt)from ORDERS);
