@@ -1,0 +1,17 @@
+
+1) -select onum,cname from ORDERS,CUSTOMER where ORDERS.cnum=CUSTOMER.cnum;
+
+2) -select sname,cname,onum from ORDERS ORDERS,CUSTOMER,SALESPEOPLE
+    WHERE ORDERS.snum=SALESPEOPLE.snum
+    and
+    ORDERS.cnum=CUSTOMER.cnum;
+
+3) -select cname,sname,comm from CUSTOMER,SALESPEOPLE
+    where SALESPEOPLE.snum=CUSTOMER.snum
+    having comm>0.12;
+
+4) -select sname, comm*amt `amount`,onum,cname,rating from ORDERS,CUSTOMER,SALESPEOPLE
+    where ORDERS.cnum=CUSTOMER.cnum and ORDERS.snum=SALESPEOPLE.snum
+    having rating>100
+    order by rating;
+
