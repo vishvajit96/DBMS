@@ -1,0 +1,17 @@
+
+
+1) -select count(Odate) from ORDERS where Odate='1990-10-03';
+
+2) -select count(DISTINCT ifnull(city,0)) from CUSTOMER;
+
+3) -select cnum,min(amt) from ORDERS GROUP BY cnum;
+
+4) -select min(cname) from CUSTOMER where cname like('G%');
+
+5) -select city,max(rating) from CUSTOMER group by city;
+
+6) - select snum,count(*) from ORDERS group by snum;
+	OR
+	-select Odate,count(snum) as `No_of_Salespeople` from 		 ORDERS group by Odate;
+
+
