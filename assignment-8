@@ -1,0 +1,9 @@
+
+1) -select onum,snum,amt*(12/100) as `Comm` from ORDERS;
+
+2) -select city,max(rating) as `highest rating is` from CUSTOMER GROUP BY city;
+
+3) -select rating,cname,cnum from CUSTOMER  order by rating desc;
+
+4) -select Odate,count(onum) as `total` from ORDERS group by odate order by total desc;
+
