@@ -1,0 +1,6 @@
+
+1) -select distinct a.sname,b.city from SALESPEOPLE b,SALESPEOPLE a where a.snum=b.snum group by a.sname,b.city order by city desc;
+
+
+2) -select a.cname,b.city from CUSTOMER a,CUSTOMER b where a.cname=b.cname and a.rating=(select rating from CUSTOMER where cname='Hoffman'); 
+
