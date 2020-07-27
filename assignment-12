@@ -1,0 +1,9 @@
+
+1) -select * from CUSTOMER  where rating >=any (select rating from CUSTOMER  where snum=(select snum from SALESPEOPLE where sname='Serres'));
+
+2) -select sname,CITY from SALESPEOPLE where city <>ALL (select city from CUSTOMER);
+
+3) -select *from ORDERS where amt >any(select amt from ORDERS where cnum in(select cnum from CUSTOMER where city='London'));
+
+4) -select *from ORDERS where amt >any(select min(amt) from ORDERS where cnum in(select cnum from CUSTOMER where city='London'));
+
