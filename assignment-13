@@ -1,0 +1,36 @@
+
+1) -select cname,city,'High Rating' rating from CUSTOMER  
+	where rating >=200 
+	union 
+	select cname,city,'Low Rating'rating from CUSTOMER 
+	where rating<200;
+
+2) - select snum,sname from SALESPEOPLE 
+	where snum in
+	(select snum from
+		(select snum,count(onum)as a from ORDERS 
+		group by snum)
+	as tempp 
+	where a>1) 
+	union 
+	select cnum,cname from CUSTOMER 
+	where cnum in 
+	(select cnum from 
+		(select cnum,count(onum) as b from ORDERS 
+		group by cnum) 
+	as tempp1 
+	where b>1) 
+	order by 2;
+
+
+3) -select snum from SALESPEOPLE 
+	where city='San Jose' 	
+	union 
+	select cnum from CUSTOMER 
+	where city='San Jose' 	
+	union all 
+	select onum from ORDERS 
+	where odate='1990-10-03';
+
+
+
