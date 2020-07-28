@@ -1,0 +1,23 @@
+
+
+1) -insert into SALESPEOPLE 
+	(city,sname,comm,snum)
+    values
+    ('San Jose','Blanco',NULL,1100);
+
+
+2) -delete from ORDERS
+	where cnum=
+	(select cnum from CUSTOMER 
+	where cname='Clemens');
+
+
+3) -UPDATE CUSTOMER 
+	set rating=(rating+100) 
+	where city='Rome';
+
+4) -UPDATE CUSTOMER 
+	set snum=
+	(select snum from SALESPEOPLE WHERE sname='Motika') 
+	where snum=
+	(select snum from SALESPEOPLE WHERE sname='Serres');
