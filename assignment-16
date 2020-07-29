@@ -1,0 +1,9 @@
+
+1) -create index ind_odate on ORDERS(odate);
+
+2) -create unique index ind_onum on ORDERS(onum);
+
+3) -create index ind_snum_odate on ORDERS (snum,odate);
+
+4) -create unique index ind_rating on CUSTOMER(rating);
+
