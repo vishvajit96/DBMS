@@ -1,0 +1,15 @@
+
+1) -create table Cityorders
+    (
+	onum int(4) primary key,
+	amt float(4,2),
+	snum int(4),
+	cnum int(4),
+	city char(10),
+	constraints fk_c_orders foreign key(snum) reference orders(snum),
+	constraints fk_c_orders foreign key(cnum) reference customers(cnum)
+    );
+
+2) -alter table orders add prev int;
+    alter table orders add constraint O_prev_fk foreign key(prev) references orders(onum);
+    alter table orders add constraint o_cnum_fk foreign key(cnum) references customer(cnum);
