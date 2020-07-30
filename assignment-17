@@ -1,0 +1,27 @@
+
+1) -create table orders
+    (
+	onum int(5) primary key,
+	Amt float(7,3),
+	odate date not null,
+	cnum int(5) not null,
+	snum int(5) not null,
+	constraint unique(cnum,onum)
+    );
+
+2) -create table salespeople
+    (
+	snum int(10) primary key,
+	sname varchar(10) check(sname=ucase(sname) and sname between 'A' and 'M'),
+	comm float(4,2) default 0.10 not null
+    );
+	
+
+3) -create table orders
+    (
+	snum int(4) not null,
+	cnum int(4) not null,
+	onum int(4) not null,
+	check(cnum>snum),
+	check(onum>cnum)
+    );
