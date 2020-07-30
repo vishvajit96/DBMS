@@ -1,0 +1,13 @@
+
+
+1) -create view v1 as select * from customers where rating=(select max(rating) from customers);
+
+2) -create view V2 as select city,count(snum) from salespeople group by city;
+
+3) -create view v3 as select sname,count(onum),avg(amt) from orders,salespeople 
+    where orders.snum=salespeople.snum 
+    group by orders.snum;
+
+4) -create view v4 as select salespeople.snum,sname,count(cnum) as customers from customers,salespeople 
+    where customers.snum=salespeople.snum 
+    group by customers.snum;
