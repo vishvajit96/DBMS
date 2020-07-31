@@ -1,0 +1,50 @@
+
+1) -
+
+#1 Create View Dailyorders as Select Distinct cnum, snum, onum, odate from Orders;
+
+Ans----YES its updateable.....
+
+
+
+
+#2 Create View Custotals as Select cname, Sum (amt) Sum_Amt from Orders, Customers 
+     where Orders.cnum=Customers.cnum Group by cname;
+
+Ans----NO its not updateable.....
+
+
+
+#3 Create view Thirdorders as Select * from Dailyorders 
+where odate=’1990-10-03’;
+
+Ans----YES its updateable.....
+
+
+
+
+
+#4 Create view Nullcities as Select snum, sname, city
+		from Salespeople where city is NULL OR sname BETWEEN ‘A’ and ‘MZ’;
+
+
+Ans----YES its updateable.....
+
+---------------------------------------------------------------------------------------------------------------------
+
+2) -create view Commission as select snum,comm from SALESPEOPLE;
+
+---------------------------------------------------------------------------------------------------------------------
+
+3) -CREATE TABLE IF NOT EXISTS `ORDERS_NEW`(
+    Onum INT(4),
+    Amt FLOAT(7,2),
+    Odate DATE default CURRENT_TIMESTAMP,
+    Cnum INT(4),
+    Snum INT(4)
+    );
+
+    create view Entryorders as 
+    select * from ORDERS_NEW;
+
+-----------------------------------------------------------------------------------------------------------------------
