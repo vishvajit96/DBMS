@@ -1,0 +1,23 @@
+
+
+1) -grant select,update on CUSTOMER to Amit;
+
+2) -grant all on ORDERS to Manoj;
+
+3) -revoke insert SALESPEOPLE from Ajita;
+
+4) -create view c_rating_100to500 as
+	select * from CUSTOMER
+	where rating between 100 and 500 with check option;
+
+	grant update on c_rating_100to500 to Abhijeet;
+
+
+5) -create view Vikram_restrict as
+	select * from CUSTOMER
+	where rating not in
+        (select min(rating) from CUSTOMER);
+
+    grant select on Vikram_restrict to Vikram;
+
+
